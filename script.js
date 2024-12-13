@@ -22,7 +22,7 @@ class ProductProperties{
     //Part 3: Static Method
     static applyDiscount(products,discount){
         for(let i = 0; i < products.length; i++){
-            products[i].changePrice(products[i].getTotalValue() * discount);
+            products[i].changePrice(products[i].price * (1- discount));
         }
         return products;
     }
