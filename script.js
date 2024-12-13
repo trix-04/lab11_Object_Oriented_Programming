@@ -17,7 +17,7 @@ class ProductProperties{
     //Part 3: Static Method
     static applyDiscount(products,discount){
         for(let i = 0; i < products.length; i++){
-            products[i] = products[i] * discount;
+            products.getTotalValue = products[i] * discount;
         }
         return products
     }
@@ -45,3 +45,5 @@ console.log(newPerishableItem1.toString());
 
 const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
 console.log(newPerishableItem2.toString());
+
+const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
