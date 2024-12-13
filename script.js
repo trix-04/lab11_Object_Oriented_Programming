@@ -27,7 +27,7 @@ class ProductProperties{
         return products;
     }
 
-    getProductName(){
+    getProductName(){ //created getter for part 4, in order to properly execute findProductByName()
         return this.productName;
     }
 
@@ -72,9 +72,6 @@ class Store{
         return null;
     }
 
-    getStore(){
-        return this.store;
-    }
 }
 
 //part 2 - 2 instances of PerishableProductProperties class
