@@ -66,7 +66,7 @@ class Store{
     findProductByName(name){
         for(let i = 0; i < this.store.length; i++){
             if (this.store[i].getProductName() == name){
-                return this.store[i].getProductName();
+                return this.store[i];
             }
         }
         return null;
@@ -98,10 +98,7 @@ store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
 
 console.log("Total inventory value before: ", store1.getInventoryValue());
-const discountedProductPrice = ProductProperties.applyDiscount(store1.getStore(), 0.15);
-console.log(discountedProductPrice);
-var discountedTotalPrice = 0;
-for(let i = 0; i < discountedProductPrice.length; i++){
-    discountedTotalPrice = discountedTotalPrice + discountedProductPrice[i].getTotalValue();
-}
-console.log("Total inventory value after: " , discountedTotalPrice);
+console.log("Total inventory value after 15% discount: " , store1.getInventoryValue() - (store1.getInventoryValue() * 0.15));
+
+const foundProduct = store1.findProductByName("Milk");
+console.log(`Product details for ${foundProduct.getProductName()} is ${foundProduct}`);
