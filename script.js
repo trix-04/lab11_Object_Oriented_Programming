@@ -40,7 +40,7 @@ class PerishableProductProperties extends ProductProperties{
         this.expirationDate = expirationDate;
     }
 
-    toString(){
+    toString(){ //overrides initial toString() in Product class
         return (`Perishable Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate} .`)
     }
 }
@@ -77,8 +77,11 @@ class Store{
     }
 }
 
+//part 2: creating 2 instances of PerishableProductProperties class
 const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
 const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
+console.log(newPerishableItem1.toString);
+console.log(newPerishableItem2.toString);
 
 //Part 3 - output
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
