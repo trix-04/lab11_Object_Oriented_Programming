@@ -11,7 +11,7 @@ class ProductProperties{
     }
 
     toString(){
-        return (`Product: ${this.productName}, Price: ${this.price}, Quantity: ${this.quantity}`)
+        return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}`)
     }
 
 }
