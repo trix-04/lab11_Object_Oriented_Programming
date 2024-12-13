@@ -14,6 +14,7 @@ class ProductProperties{
         return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}.`);
     }
 
+    //Part 3: Added to get expected output for static method "applyDiscount"
     changePrice(newPrice){
         this.price = newPrice;
     }
@@ -23,7 +24,7 @@ class ProductProperties{
         for(let i = 0; i < products.length; i++){
             products[i].changePrice(products[i].getTotalValue() * discount);
         }
-        return products
+        return products;
     }
 
 }
@@ -37,6 +38,22 @@ class PerishableProductProperties extends ProductProperties{
 
     toString(){
         return (`Perishable Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate} .`)
+    }
+}
+
+//Part 4: Store Management
+class Store{
+    addProduct(product){
+        this.store.push(product);
+    }
+
+    getInventoryValue(){
+        let value = 0;
+        for(let i = 0; i < this.store.length; i++){
+            value = value + this.store[i].getTotalValue();
+
+        }
+        return value;
     }
 }
 
