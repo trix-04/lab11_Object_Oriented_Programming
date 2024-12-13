@@ -7,7 +7,7 @@ class ProductProperties{
     }
 
     getTotalValue(){
-        return this.price * this.quantity;
+        return (`The total value of the ${this.productName} in stock is ` + this.price * this.quantity);
     }
 
     toString(){
