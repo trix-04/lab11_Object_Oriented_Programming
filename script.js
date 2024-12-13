@@ -18,7 +18,8 @@ class ProductProperties{
 
 //Part 2: Inheritance
 class PerishableProductProperties extends ProductProperties{
-    constructor(expirationDate){
+    constructor(productName, price, quantity, expirationDate){
+        super(productName, price, quantity);
         this.expirationDate = expirationDate;
     }
 
@@ -27,6 +28,11 @@ class PerishableProductProperties extends ProductProperties{
     }
 }
 
-const newItem = new ProductProperties("Apples", 12, 5);
-console.log(newItem.getTotalValue());
-console.log(newItem.toString());
+const newItem = new ProductProperties("Apples", 4, 5);
+// console.log(newItem.getTotalValue());
+// console.log(newItem.toString());
+
+const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 2, "2024-12-20");
+console.log(newPerishableItem1.toString());
+
+//const newPerishableItem2 = new PerishableProductProperties(" ", , , " ");
