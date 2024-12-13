@@ -11,7 +11,7 @@ class ProductProperties{
     }
 
     toString(){
-        return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}`)
+        return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}.`);
     }
 
 }
@@ -20,6 +20,10 @@ class ProductProperties{
 class PerishableProductProperties extends ProductProperties{
     constructor(expirationDate){
         this.expirationDate = expirationDate;
+    }
+
+    toString(){
+        return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate} .`)
     }
 }
 
