@@ -16,6 +16,13 @@ class ProductProperties{
 
 }
 
+//Part 2: Inheritance
+class PerishableProductProperties extends ProductProperties{
+    constructor(expirationDate){
+        this.expirationDate = expirationDate;
+    }
+}
+
 const newItem = new ProductProperties("Apples", 12, 5);
 console.log(newItem.getTotalValue());
 console.log(newItem.toString());
