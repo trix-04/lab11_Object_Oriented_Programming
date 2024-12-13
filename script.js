@@ -7,17 +7,21 @@ class ProductProperties{
     }
 
     getTotalValue(){
-        return (`The total value of the ${this.productName} in stock is ` + this.price * this.quantity);
+        return this.price * this.quantity;
     }
 
     toString(){
         return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}.`);
     }
 
+    changePrice(newPrice){
+        this.price = newPrice;
+    }
+
     //Part 3: Static Method
     static applyDiscount(products,discount){
         for(let i = 0; i < products.length; i++){
-            products.getTotalValue = products[i] * discount;
+            products[i].changePrice(products[i].getTotalValue() * discount);
         }
         return products
     }
@@ -40,7 +44,7 @@ const newItem = new ProductProperties("Apples", 4, 5);
 console.log(newItem.getTotalValue());
 console.log(newItem.toString());
 
-const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 2, "2024-12-20");
+const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
 console.log(newPerishableItem1.toString());
 
 const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
