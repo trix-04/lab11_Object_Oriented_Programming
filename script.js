@@ -69,3 +69,8 @@ console.log(newPerishableItem2.toString());
 
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
 console.log(discountedProduct);
+
+const store1 = new Store();
+store1.addProduct(newPerishableItem1);
+store1.addProduct(newPerishableItem2);
+console.log(store1.getInventoryValue());
