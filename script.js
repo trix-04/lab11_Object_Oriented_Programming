@@ -14,7 +14,7 @@ class ProductProperties{
         return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}.`);
     }
 
-    //Part 3: Added to get expected output for static method "applyDiscount"
+    //Added to get expected output for static method "applyDiscount"
     changePrice(newPrice){
         this.price = newPrice;
     }
@@ -41,7 +41,7 @@ class PerishableProductProperties extends ProductProperties{
     }
 
     toString(){ //overrides initial toString() in Product class
-        return (`Perishable Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate} .`)
+        return (`Perishable Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`)
     }
 }
 
@@ -77,15 +77,15 @@ class Store{
     }
 }
 
-//part 2: creating 2 instances of PerishableProductProperties class
+//part 2 - 2 instances of PerishableProductProperties class
 const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
 const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
 console.log(newPerishableItem1.toString());
 console.log(newPerishableItem2.toString());
 
-//Part 3 - output
+//Part 3 - output after applying discount to product's prices in array
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
-//console.log(discountedProduct);
+console.log("\nPerishable Items after 50% discount", discountedProduct);
 
 //Part 5: Testing the System
 const newItem1 = new ProductProperties("Apples", 4, 2);
