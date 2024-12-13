@@ -14,6 +14,14 @@ class ProductProperties{
         return (`Product: ${this.productName}, Price: $${this.price}, Quantity: ${this.quantity}.`);
     }
 
+    //Part 3: Static Method
+    static applyDiscount(products,discount){
+        for(let i = 0; i < products.length; i++){
+            products[i] = products[i] * discount;
+        }
+        return products
+    }
+
 }
 
 //Part 2: Inheritance
