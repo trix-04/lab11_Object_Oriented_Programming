@@ -29,10 +29,11 @@ class PerishableProductProperties extends ProductProperties{
 }
 
 const newItem = new ProductProperties("Apples", 4, 5);
-// console.log(newItem.getTotalValue());
-// console.log(newItem.toString());
+console.log(newItem.getTotalValue());
+console.log(newItem.toString());
 
 const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 2, "2024-12-20");
 console.log(newPerishableItem1.toString());
 
-//const newPerishableItem2 = new PerishableProductProperties(" ", , , " ");
+const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
+console.log(newPerishableItem2.toString());
