@@ -73,22 +73,23 @@ class Store{
     }
 }
 
-const newItem = new ProductProperties("Apples", 4, 5);
-console.log(newItem.getTotalValue());
-console.log(newItem.toString());
-
-const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
-console.log(newPerishableItem1.toString());
-
-const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
-console.log(newPerishableItem2.toString());
-
+//Part 3 - output
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
 console.log(discountedProduct);
 
+//Part 5: Testing the System
+const newItem1 = new ProductProperties("Apples", 4, 5);
+const newItem2 = new ProductProperties("Cereal", 8, 1);
+const newItem3 = new ProductProperties("Pasta", 6, 2);
+
+const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
+
+const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
+
+
 const store1 = new Store();
+store1.addProduct(newItem1);
+store1.addProduct(newItem2);
+store1.addProduct(newItem3);
 store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
-//console.log(store1.getInventoryValue());
-
-console.log("Product Found: " , store1.findProductByName("Apple"));
