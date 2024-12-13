@@ -27,6 +27,10 @@ class ProductProperties{
         return products;
     }
 
+    getProductName(){
+        return this.productName;
+    }
+
 }
 
 //Part 2: Inheritance
@@ -43,6 +47,9 @@ class PerishableProductProperties extends ProductProperties{
 
 //Part 4: Store Management
 class Store{
+    constructor(){
+        this.store = [];
+    }
     addProduct(product){
         this.store.push(product);
     }
@@ -54,6 +61,15 @@ class Store{
 
         }
         return value;
+    }
+
+    findProductByName(name){
+        for(let i = 0; i < this.store.length; i++){
+            if (this.store[i].getProductName() == name){
+                return this.store[i].getProductName();
+            }
+        }
+        return null;
     }
 }
 
@@ -73,4 +89,6 @@ console.log(discountedProduct);
 const store1 = new Store();
 store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
-console.log(store1.getInventoryValue());
+//console.log(store1.getInventoryValue());
+
+console.log("Product Found: " , store1.findProductByName("Apple"));
