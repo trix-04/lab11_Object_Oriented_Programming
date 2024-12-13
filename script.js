@@ -113,4 +113,4 @@ console.log("Total inventory value after 15% discount: $" , store1.getInventoryV
 
 //finding 'Milk' product and printing details
 const foundProduct = store1.findProductByName("Milk");
-console.log(`Product details for ${foundProduct.getProductName()} is ${foundProduct}`);
+console.log(`\nProduct details for ${foundProduct.getProductName()} is ${foundProduct}`);
