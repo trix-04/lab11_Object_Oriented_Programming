@@ -77,18 +77,17 @@ class Store{
     }
 }
 
+const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
+const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
+
 //Part 3 - output
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
-console.log(discountedProduct);
+//console.log(discountedProduct);
 
 //Part 5: Testing the System
-const newItem1 = new ProductProperties("Apples", 4, 5);
+const newItem1 = new ProductProperties("Apples", 4, 2);
 const newItem2 = new ProductProperties("Cereal", 8, 1);
-const newItem3 = new ProductProperties("Pasta", 6, 2);
-
-const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
-
-const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
+const newItem3 = new ProductProperties("Pasta", 6, 1);
 
 
 const store1 = new Store();
@@ -99,4 +98,10 @@ store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
 
 console.log("Total inventory value before: ", store1.getInventoryValue());
-console.log("Total inventory value after: " , ProductProperties.applyDiscount(store1.getStore(), 0.15));
+const discountedProductPrice = ProductProperties.applyDiscount(store1.getStore(), 0.15);
+console.log(discountedProductPrice);
+var discountedTotalPrice = 0;
+for(let i = 0; i < discountedProductPrice.length; i++){
+    discountedTotalPrice = discountedTotalPrice + discountedProductPrice[i].getTotalValue();
+}
+console.log("Total inventory value after: " , discountedTotalPrice);
