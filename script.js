@@ -74,7 +74,7 @@ class Store{
 
 }
 
-//part 2 - 2 instances of PerishableProductProperties class
+//Part 2 - 2 instances of PerishableProductProperties class
 const newPerishableItem1 = new PerishableProductProperties("Pancetta", 20, 1, "2024-12-20");
 const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-12-27");
 console.log(newPerishableItem1.toString());
@@ -84,7 +84,7 @@ console.log(newPerishableItem2.toString());
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
 console.log("\nPerishable Items after 50% discount", discountedProduct);
 
-//Part 5: Testing the System
+//Part 5: created items
 const newItem1 = new ProductProperties("Apples", 4, 2);
 const newItem2 = new ProductProperties("Cereal", 8, 1);
 const newItem3 = new ProductProperties("Pasta", 6, 1);
@@ -98,6 +98,14 @@ store1.addProduct(newItem3);
 store1.addProduct(newItem4);
 store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
+
+console.log("\nAll items added to store inventory: ");
+console.log(newItem1.toString());
+console.log(newItem2.toString()); 
+console.log(newItem3.toString()); 
+console.log(newItem4.toString());
+console.log(newPerishableItem1.toString());
+console.log(newPerishableItem2.toString());
 
 //print total inventory value before & after discount
 console.log("\nTotal inventory value before 15% discount: $", store1.getInventoryValue());
