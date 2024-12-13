@@ -88,17 +88,21 @@ console.log("\nPerishable Items after 50% discount", discountedProduct);
 const newItem1 = new ProductProperties("Apples", 4, 2);
 const newItem2 = new ProductProperties("Cereal", 8, 1);
 const newItem3 = new ProductProperties("Pasta", 6, 1);
+const newItem4 = new ProductProperties("Ice Cream", 15, 1);
 
-
+//added all products to Store object
 const store1 = new Store();
 store1.addProduct(newItem1);
 store1.addProduct(newItem2);
 store1.addProduct(newItem3);
+store1.addProduct(newItem4);
 store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
 
-console.log("Total inventory value before: ", store1.getInventoryValue());
-console.log("Total inventory value after 15% discount: " , store1.getInventoryValue() - (store1.getInventoryValue() * 0.15));
+//print total inventory value before & after discount
+console.log("\nTotal inventory value before 15% discount: $", store1.getInventoryValue());
+console.log("Total inventory value after 15% discount: $" , store1.getInventoryValue() - (store1.getInventoryValue() * 0.15));
 
+//finding 'Milk' product and printing details
 const foundProduct = store1.findProductByName("Milk");
 console.log(`Product details for ${foundProduct.getProductName()} is ${foundProduct}`);
