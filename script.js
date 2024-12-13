@@ -47,3 +47,4 @@ const newPerishableItem2 = new PerishableProductProperties("Milk", 12, 1, "2024-
 console.log(newPerishableItem2.toString());
 
 const discountedProduct = ProductProperties.applyDiscount([newPerishableItem1 , newPerishableItem2], 0.5);
+console.log(discountedProduct);
