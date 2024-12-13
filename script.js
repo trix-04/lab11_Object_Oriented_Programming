@@ -71,6 +71,10 @@ class Store{
         }
         return null;
     }
+
+    getStore(){
+        return this.store;
+    }
 }
 
 //Part 3 - output
@@ -93,3 +97,6 @@ store1.addProduct(newItem2);
 store1.addProduct(newItem3);
 store1.addProduct(newPerishableItem1);
 store1.addProduct(newPerishableItem2);
+
+console.log("Total inventory value before: ", store1.getInventoryValue());
+console.log("Total inventory value after: " , ProductProperties.applyDiscount(store1.getStore(), 0.15));
